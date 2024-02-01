@@ -6,7 +6,7 @@
     --social-color: #023e8a;
     --about-me-color: #ffbe0b;
     --main-text-color: #3B3B3B;
-    --second-text-color:#5F5F5F;
+    --second-text-color: #5F5F5F;
 }
 
 * {
@@ -14,6 +14,21 @@
     font-family: "Roboto", sans-serif;
     font-weight: bold;
 }
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 52px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: lighter;
+    color: var(--second-text-color);
+}
+
 
 body {
     margin: 0;
@@ -37,44 +52,43 @@ body {
     flex-direction: row;
     gap: 26px;
     justify-content: center;
+
+    .nav-link, .nav-name {
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .nav-link:hover {
+        color: #0B60B0;
+    }
+
+    .active {
+        border-bottom: 3px solid #0B60B0;
+    }
 }
 
-.nav-link, .nav-name {
-    text-decoration: none;
-    font-size: 20px;
-}
 
-.nav-link:hover {
-    color: #0B60B0;
+.index-page-body {
+    margin: 4% 25% 0 25%;
 }
-
-.active {
-    border-bottom: 3px solid #0B60B0;
+.resume-page-body{
+    margin: 4% 30% 0 30%;
 }
-
-.page-body {
-    margin: 6% 20% 0 20%;
-}
-
-h1, h2 {
-    margin: 0;
-}
-
-h1 {
-    font-size: 52px;
-}
-
-h2 {
-    font-size: 20px;
-    font-weight: lighter;
-    color: var(--second-text-color);
-}
-
 
 .introduction {
     display: flex;
     flex-direction: row;
     gap: 100px;
+
+    .person-image {
+        height: 450px;
+
+        .image {
+            box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+            border-radius: 4%;
+            height: 100%;
+        }
+    }
 }
 
 
@@ -89,6 +103,7 @@ i {
     flex-direction: row;
     justify-content: start;
     gap: 12px;
+
     .contact-me {
         text-decoration: none;
         display: flex;
@@ -96,30 +111,26 @@ i {
         justify-content: center;
     }
 }
-.contact-me i:hover{
+
+.contact-me i:hover {
     transition: .3s;
     color: var(--main-text-color);;
-}
-
-.person-image {
-    height: 450px;
-}
-
-.image {
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-    border-radius: 4%;
-    height: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
 
     .main-nav ul {
         gap: 20px;
+
+        .nav-link, .nav-name {
+            font-size: 18px;
+        }
     }
 
-    .nav-link, .nav-name {
-        font-size: 18px;
+    .index-page-body {
+        margin: 6% 20% 0 20%;
     }
+
 
     h1 {
         font-size: 40px;
@@ -131,29 +142,36 @@ i {
 
     .introduction {
         gap: 60px;
+
+        .person-image {
+            height: 350px;
+        }
     }
 
-    .socials{
+    .socials {
         gap: 10px;
     }
+
     i {
         font-size: 18px;
     }
 
-    .person-image {
-        height: 350px;
-    }
 }
 
 
 @media only screen and (max-width: 768px) {
-    .main-nav ul {
-        gap: 16px;
+    .index-page-body {
+        margin: 6% 15% 0 15%;
     }
 
-    .nav-link, .nav-name {
-        font-size: 16px;
+    .main-nav ul {
+        gap: 16px;
+
+        .nav-link, .nav-name {
+            font-size: 16px;
+        }
     }
+
     h1 {
         font-size: 30px;
     }
@@ -161,24 +179,139 @@ i {
     h2 {
         font-size: 12px;
     }
-    .socials{
+
+    .socials {
         gap: 8px;
     }
+
     .introduction {
         gap: 20px;
+
+        .person-image {
+            height: 250px;
+        }
     }
 
     i {
         font-size: 14px;
     }
 
-    .person-image {
-        height: 250px;
+}
+
+@media only screen and (max-width: 468px) {
+
+    .introduction {
+        .person-image {
+            height: 160px;
+        }
+    }
+}
+
+/* resume specific css */
+.resume-education {
+    .educaton-header {
+        font-size: 26px;
+        border-bottom: 3px solid var(--main-text-color);
+    }
+
+    .education-step {
+        display: flex;
+        justify-content: space-between;
+
+        .step-duration {
+            align-self: center;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .step-location {
+            color: var(--second-text-color);
+            font-size: 14px;
+            font-weight: lighter;;
+        }
+    }
+}
+
+.experience {
+    .experience-header {
+        font-size: 26px;
+        border-bottom: 3px solid var(--main-text-color);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .resume-page-body{
+        margin: 4% 20% 0 20%;
+    }
+    .resume-education {
+        .educaton-header {
+            font-size: 24px;
+        }
+
+        .education-step {
+            .step-duration {
+                font-size: 14px;
+                width: 200px;
+            }
+
+            .step-location {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .experience {
+        .experience-header {
+            font-size: 24px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .resume-page-body{
+        margin: 4% 18% 0 18%;
+    }
+    .resume-education {
+        .educaton-header {
+            border-bottom: 2px solid var(--main-text-color);
+            font-size: 18px;
+        }
+    }
+
+    .experience {
+        .experience-header {
+            border-bottom: 2px solid var(--main-text-color);
+            font-size: 18px;
+        }
     }
 }
 
 @media only screen and (max-width: 468px) {
-    .person-image {
-        height: 160px;
+    .resume-page-body{
+        margin: 4% 15% 0 15%;
+    }
+    .resume-education {
+        .educaton-header {
+            font-size: 18px;
+        }
+
+        .education-step {
+            font-size: 14px;
+
+            .step-duration {
+                font-size: 12px;
+                width: 80px;
+            }
+
+            .step-location {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .experience {
+        .experience-header {
+            font-size: 18px;
+        }
     }
 }
