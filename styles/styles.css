@@ -1,13 +1,16 @@
 
 :root {
-    --body-bg-color: #F6F6F6;
+    --body-bg-color: #ffffff;
     --header-bg-color: #ffffff;
     --icon--color: #ffffff;
     --social-color: #023e8a;
     --about-me-color: #ffbe0b;
+    --main-text-color: #3B3B3B;
+    --second-text-color:#5F5F5F;
 }
 
 * {
+    color: var(--main-text-color);
     font-family: "Roboto", sans-serif;
     font-weight: bold;
 }
@@ -18,33 +21,27 @@ body {
 }
 
 .page-header {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: var(--header-bg-color);
     padding: 6px 0 6px 0;
 }
 
 .main-nav {
-    margin: 0 15% 0 15%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .main-nav ul {
     list-style: none;
     padding-left: 0;
-
     display: flex;
     flex-direction: row;
-    gap: 18px;
+    gap: 26px;
     justify-content: center;
 }
 
 .nav-link, .nav-name {
     text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
-    color: #3D3B40;
 }
 
 .nav-link:hover {
@@ -56,7 +53,7 @@ body {
 }
 
 .page-body {
-    margin: 6% 15% 0 15%;
+    margin: 6% 20% 0 20%;
 }
 
 h1, h2 {
@@ -69,11 +66,8 @@ h1 {
 
 h2 {
     font-size: 20px;
-}
-
-.name-color {
-    color: #0B60B0;
-
+    font-weight: lighter;
+    color: var(--second-text-color);
 }
 
 
@@ -83,57 +77,28 @@ h2 {
     gap: 100px;
 }
 
-.about-me {
-    padding-top: 2.5vh;
-}
-
-.about-me a {
-    font-size: 16px;
-    text-decoration: none;
-    color: var(--icon--color);
-    background-color: var(--about-me-color);
-    border: 2px solid var(--about-me-color);
-    border-radius: 20px;
-    padding: 10px 20px 10px 20px;
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-}
-
-.about-me a:hover {
-    transition: background-color 0.5s, color 0.5s;
-    color: var(--about-me-color);
-    background-color: var(--icon--color);
-}
 
 i {
-    font-size: 20px;
+    color: var(--second-text-color);
+    font-size: 22px;
 }
 
 .socials {
-    padding-top: 2.5vh;
+    padding-top: 1vh;
     display: flex;
     flex-direction: row;
     justify-content: start;
-    gap: 10px;
-
+    gap: 12px;
     .contact-me {
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 45px;
-        width: 45px;
-        border-radius: 50%;
-        border: 2px solid var(--social-color);
-        color: var(--icon--color);
-        background-color: var(--social-color);
-        transition: background-color 0.5s, color 0.5s;
-        box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     }
 }
-
-.contact-me:hover {
-    color: var(--social-color);
-    background-color: var(--icon--color);
+.contact-me i:hover{
+    transition: .3s;
+    color: var(--main-text-color);;
 }
 
 .person-image {
@@ -142,11 +107,20 @@ i {
 
 .image {
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-    border-radius: 2%;
+    border-radius: 4%;
     height: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
+
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .nav-link, .nav-name {
+        font-size: 18px;
+    }
+
     h1 {
         font-size: 40px;
     }
@@ -159,19 +133,9 @@ i {
         gap: 60px;
     }
 
-    .socials {
-        .contact-me {
-            height: 45px;
-            width: 45px;
-        }
+    .socials{
+        gap: 10px;
     }
-
-    .about-me a {
-        font-size: 14px;
-        border-radius: 16px;
-        padding: 8px 16px 8px 16px;
-    }
-
     i {
         font-size: 18px;
     }
@@ -183,10 +147,13 @@ i {
 
 
 @media only screen and (max-width: 768px) {
-    .nav-link {
-        display: none;
+    .main-nav ul {
+        gap: 16px;
     }
 
+    .nav-link, .nav-name {
+        font-size: 16px;
+    }
     h1 {
         font-size: 30px;
     }
@@ -194,19 +161,11 @@ i {
     h2 {
         font-size: 12px;
     }
-
+    .socials{
+        gap: 8px;
+    }
     .introduction {
         gap: 20px;
-    }
-
-    .socials {
-        .contact-me {
-            height: 30px;
-            width: 30px;
-        }
-    }
-    .about-me a {
-        font-size: 12px;
     }
 
     i {
@@ -220,6 +179,6 @@ i {
 
 @media only screen and (max-width: 468px) {
     .person-image {
-        height: 200px;
+        height: 160px;
     }
 }
