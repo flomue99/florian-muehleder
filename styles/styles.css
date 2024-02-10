@@ -1,12 +1,31 @@
+@media (prefers-color-scheme: light) {
+    :root {
+        --body-bg-color: #ffffff;
+        --header-bg-color: #ffffff;
+        --icon--color: #ffffff;
+        --social-color: #023e8a;
+        --about-me-color: #ffbe0b;
+        --main-text-color: #3B3B3B;
+        --second-text-color: #5F5F5F;
+    }
+}
 
-:root {
-    --body-bg-color: #ffffff;
-    --header-bg-color: #ffffff;
-    --icon--color: #ffffff;
-    --social-color: #023e8a;
-    --about-me-color: #ffbe0b;
-    --main-text-color: #3B3B3B;
-    --second-text-color: #5F5F5F;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg-color: #121212;
+        --header-bg-color: #121212;
+        --icon--color: #ffffff;
+        --social-color: #023e8a;
+        --about-me-color: #ffbe0b;
+        --main-text-color: #EEEEEE;
+        --second-text-color: #CECECE;
+    }
+
+    .person-image {
+        .image {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+    }
 }
 
 * {
@@ -71,7 +90,8 @@ body {
 .index-page-body {
     margin: 4% 25% 0 25%;
 }
-.resume-page-body{
+
+.resume-page-body {
     margin: 4% 30% 0 30%;
 }
 
@@ -84,7 +104,7 @@ body {
         height: 450px;
 
         .image {
-            box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             border-radius: 4%;
             height: 100%;
         }
@@ -141,10 +161,12 @@ i {
     }
 
     .introduction {
-        gap: 60px;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
 
         .person-image {
-            height: 350px;
+            height: 500px;
         }
     }
 
@@ -161,73 +183,55 @@ i {
 
 @media only screen and (max-width: 768px) {
     .index-page-body {
-        margin: 6% 15% 0 15%;
-    }
-
-    .main-nav ul {
-        gap: 16px;
-
-        .nav-link, .nav-name {
-            font-size: 16px;
-        }
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-
-    h2 {
-        font-size: 12px;
-    }
-
-    .socials {
-        gap: 8px;
+        margin: 6% 10% 0 10%;
     }
 
     .introduction {
         gap: 20px;
+        flex-direction: column;
 
         .person-image {
-            height: 250px;
+            height: 400px;
         }
-    }
-
-    i {
-        font-size: 14px;
     }
 
 }
 
-@media only screen and (max-width: 468px) {
-
-    .introduction {
-        .person-image {
-            height: 160px;
-        }
-    }
-}
 
 /* resume specific css */
-.resume-education {
-    .educaton-header {
+.resume-section {
+    .step-header {
         font-size: 26px;
         border-bottom: 3px solid var(--main-text-color);
     }
 
-    .education-step {
+    .step {
+        margin-bottom: 10px;
         display: flex;
         justify-content: space-between;
 
         .step-duration {
-            align-self: center;
+            margin-top: 14px;
             font-size: 14px;
             width: 200px;
+        }
+
+        .step-description {
+            line-height: 1.4;
+            font-size: 12px;
+            font-weight: normal;
+            width: 240px;
+
+            .step-title {
+                font-size: 16px;
+            }
         }
 
         .step-location {
             color: var(--second-text-color);
             font-size: 14px;
-            font-weight: lighter;;
+            font-style: italic;
+            font-weight: lighter;
         }
     }
 }
@@ -240,18 +244,26 @@ i {
 }
 
 @media only screen and (max-width: 1024px) {
-    .resume-page-body{
+    .resume-page-body {
         margin: 4% 20% 0 20%;
     }
-    .resume-education {
-        .educaton-header {
+
+    .resume-section {
+        .step-header {
             font-size: 24px;
         }
 
-        .education-step {
+        .step {
             .step-duration {
                 font-size: 14px;
                 width: 200px;
+            }
+
+            .step-description {
+                line-height: 1.4;
+                font-size: 12px;
+                font-weight: normal;
+                width: 240px;
             }
 
             .step-location {
@@ -268,13 +280,20 @@ i {
 }
 
 @media only screen and (max-width: 768px) {
-    .resume-page-body{
+    .resume-page-body {
         margin: 4% 18% 0 18%;
     }
-    .resume-education {
-        .educaton-header {
+
+    .resume-section {
+        .step-header {
             border-bottom: 2px solid var(--main-text-color);
             font-size: 18px;
+        }
+
+        .step {
+            .step-duration {
+                width: 100px;
+            }
         }
     }
 
@@ -287,20 +306,27 @@ i {
 }
 
 @media only screen and (max-width: 468px) {
-    .resume-page-body{
-        margin: 4% 15% 0 15%;
+    .resume-page-body {
+        margin: 4% 10% 0 10%;
     }
-    .resume-education {
-        .educaton-header {
+
+    .resume-section {
+        .step-header {
             font-size: 18px;
         }
 
-        .education-step {
-            font-size: 14px;
+        .step {
+
 
             .step-duration {
-                font-size: 12px;
-                width: 80px;
+                font-size: 10px;
+                width: 70px;
+            }
+
+            .step-description {
+                .step-title {
+                    font-size: 14px;
+                }
             }
 
             .step-location {
